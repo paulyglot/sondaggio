@@ -1,3 +1,23 @@
-module.exports = (survey) => {
-  return '<div>' + survey.body + '</div>';
+const keys = require('../../src/config/keys');
+
+module.exports = survey => {
+  return `
+    <html>
+      <body>
+        <div style="text-align: center;">
+          <h3>I'd love your input!</h3>
+          <p>Please answer the following questions:</p>
+          <p>${survey.body}</p>
+          <div>
+            <a href="${keys.redirectDomain}/api/surveys/thanks">Yes</a>
+          </div>
+          <div>
+            <a href="${keys.redirectDomain}/api/surveys/thanks">No</a>
+          </div>
+        </div>
+      </body>
+    </html>
+  `;
 };
+
+//come back and use an email styling tool to improve look
