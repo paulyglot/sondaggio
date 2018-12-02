@@ -1,11 +1,10 @@
 import React from 'react';
 
-export default (props) => {
-  console.log(props);
-  
+export default ({ input, label }) => {
   return (
     <div>
-      <input />
+    <label>{label}</label>
+      <input {...input} />
     </div>
   );
 };
